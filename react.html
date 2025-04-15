@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React SPA</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body {
+      background-color: #1a1a2e;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background-color: #16213e;
+      padding: 20px;
+      text-align: center;
+      color: #ff9d00;
+    }
+    nav {
+      background-color: #0f3460;
+      padding: 10px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #ff9d00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a.active {
+      text-decoration: underline;
+    }
+    #root {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60vh;
+    }
+    .counter {
+      text-align: center;
+    }
+    .counter p {
+      font-size: 48px;
+      margin: 20px 0;
+    }
+    .counter button {
+      font-size: 24px;
+      margin: 0 10px;
+      padding: 10px 20px;
+    }
+    .back-link {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .back-link a {
+      color: #00d1b2;
+      font-size: 18px;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>React Single Page Application</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="setPage('Calculator')">Calculator</a></li>
+      <li><a href="#" onclick="setPage('Counter')">Counter</a></li>
+    </ul>
+  </nav>
+  <div id="root"></div>
+  <div class="back-link">
+    <a href="index.html">← Back to Main Menu</a>
+  </div>
+  <footer>
+    <p>Created by: [Szabó Lilla] | Neptun Code: [BDCRL0]</p>
+  </footer>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    function Calculator() {
+      const [a, setA] = useState(0);
+      const [b, setB] = useState(0);
+      return (
+        <div style={{ textAlign: 'center' }}>
+          <h2>Calculator</h2>
+          <input type="number" onChange={e => setA(+e.target.value)} placeholder="Number A" />
+          <input type="number" onChange={e => setB(+e.target.value)} placeholder="Number B" />
+          <p>Sum: {a + b}</p>
+        </div>
+      );
+    }
+
+    function Counter() {
+      const [count, setCount] = useState(0);
+      return (
+        <div className="counter">
+          <h2>Counter</h2>
+          <p>{count}</p>
+          <button onClick={() => setCount(count + 1)}>+</button>
+          <button onClick={() => setCount(count - 1)}>-</button>
+          <button onClick={() => setCount(0)}>Reset</button>
+        </div>
+      );
+    }
+
+    function App({ page }) {
+      if (page === 'Calculator') return <Calculator />;
+      if (page === 'Counter') return <Counter />;
+      return <p style={{ textAlign: 'center' }}>Select a menu option.</p>;
+    }
+
+    let currentPage = 'Calculator';
+    function setPage(page) {
+      currentPage = page;
+      renderApp();
+    }
+
+    function renderApp() {
+      ReactDOM.render(<App page={currentPage} />, document.getElementById("root"));
+    }
+
+    renderApp();
+  </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-programming-1 Lecture Homework</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="table.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #16213e;
+            padding: 20px;
+            text-align: center;
+            color: #ff9d00;
+        }
+        nav {
+            background-color: #0f3460;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ff9d00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a.active {
+            text-decoration: underline;
+        }
+        aside {
+            background-color: #1b262c;
+            padding: 15px;
+            color: #ff9d00;
+        }
+        .content {
+            padding: 20px;
+            background-color: #0f3460;
+            margin: 20px;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #1b262c;
+            color: #ffffff;
+        }
+        table, th, td {
+            border: 1px solid #ff9d00;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            cursor: pointer;
+            background-color: #16213e;
+        }
+        input {
+            margin: 10px 0;
+            padding: 5px;
+        }
+        footer {
+            background-color: #16213e;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            color: #ff9d00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Web-programming-1 Lecture Homework</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="table.html" class="active">Table</a></li>
+            <li><a href="html5.html">HTML5 Features</a></li>
+            <li><a href="chart.html">Charts</a></li>
+            <li><a href="ajax.html">AJAX</a></li>
+            <li><a href="oojs.html">OOJS</a></li>
+            <li><a href="react.html">React</a></li>
+        </ul>
+    </nav>
+    <aside>
+        <p>Additional content or links can go here.</p>
+    </aside>
+    <div class="content">
+        <h2>Table with CRUD Operations</h2>
+        <input type="text" id="search" placeholder="Search..." onkeyup="searchTable()">
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">Name</th>
+                    <th onclick="sortTable(1)">Age</th>
+                    <th onclick="sortTable(2)">City</th>
+                    <th onclick="sortTable(3)">Country</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be added dynamically -->
+            </tbody>
+        </table>
+        <h3>Add New Entry</h3>
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="number" id="age" placeholder="Age" required>
+        <input type="text" id="city" placeholder="City" required>
+        <input type="text" id="country" placeholder="Country" required>
+        <button onclick="addRow()">Add</button>
+    </div>
+    <footer>
+        <p>Created by: [Szabó Lilla] | Neptun Code: [BDCRL0]</p>
+    </footer>
+</body>
+</html>

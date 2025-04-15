@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Features</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="html5.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #16213e;
+            padding: 20px;
+            text-align: center;
+            color: #ff9d00;
+        }
+        nav {
+            background-color: #0f3460;
+            padding: 10px;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li a.active {
+            text-decoration: underline;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ff9d00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+            background-color: #0f3460;
+            margin: 20px;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #16213e;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: #ff9d00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML5 Features</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="table.html">Table</a></li>
+            <li><a href="html5.html" class="active">HTML5 Features</a></li>
+            <li><a href="chart.html">Charts</a></li>
+            <li><a href="ajax.html">AJAX</a></li>
+            <li><a href="oojs.html">OOJS</a></li>
+            <li><a href="react.html">React</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h2>Semantic Elements</h2>
+        <section>
+            <article>
+                <h3>Article Element</h3>
+                <p>The &lt;article&gt; element represents self-contained content, such as a blog post.</p>
+            </article>
+            <aside>
+                <h3>Aside Element</h3>
+                <p>The &lt;aside&gt; element is used for content related to the main content, like sidebars.</p>
+            </aside>
+        </section>
+        
+        <h2>Form Enhancements</h2>
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+            <label for="range">Range:</label>
+            <input type="range" id="range" name="range" min="0" max="100">
+            <button type="submit">Submit</button>
+        </form>
+        
+        <h2>Local Storage Example</h2>
+        <input type="text" id="storageInput" placeholder="Type something...">
+        <button onclick="saveToLocalStorage()">Save</button>
+        <p id="storageOutput"></p>
+    </div>
+    <footer>
+        <p>Created by: [Szabó Lilla] | Neptun Code: [BDCRL0]</p>
+    </footer>
+</body>
+</html>

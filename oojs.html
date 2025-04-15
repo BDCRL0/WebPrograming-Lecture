@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OOJS Example</title>
+  <script defer src="oojs.js"></script>
+  <style>
+    body {
+      background-color: #1a1a2e;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header, footer {
+      background-color: #16213e;
+      color: #ff9d00;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #0f3460;
+      padding: 10px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #ff9d00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a.active {
+      text-decoration: underline;
+    }
+    .content {
+      padding: 20px;
+      background-color: #0f3460;
+      margin: 20px;
+      border-radius: 5px;
+    }
+    select, button {
+      margin: 10px 5px;
+      padding: 5px 10px;
+      font-size: 16px;
+    }
+    #boxContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .color-box {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Object Oriented JS</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="table.html">Table</a></li>
+      <li><a href="html5.html">HTML5 Features</a></li>
+      <li><a href="chart.html">Charts</a></li>
+      <li><a href="ajax.html">AJAX</a></li>
+      <li><a href="oojs.html" class="active">OOJS</a></li>
+      <li><a href="react.html">React</a></li>
+    </ul>
+  </nav>
+  <div class="content">
+    <h2>Class-based Color Boxes</h2>
+    <button onclick="createBox()">Add Color Box</button>
+    <div id="boxContainer"></div>
+  </div>
+  <footer>
+    <p>Created by: [Szabó Lilla] | Neptun Code: [BDCRL0]</p>
+  </footer>
+</body>
+</html>

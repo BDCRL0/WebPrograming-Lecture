@@ -1,0 +1,16 @@
+react page: put the main menu back so i can navigat eback to the other pages
+react counter: add a button that sets the number back to 0
+
+oojs: block remover button, i want to choose which button i want to remove, after removing the other boxes
+should fill out the missing space
+
+
+ajax: the height and weight parts should check if the written value is a number, if not, give an error
+message
+
+charts: when i load in the page i want to white area (that shows the chart) to be as wide as the table
+that we choose the values from, also it should show the values
+
+table: can not see the adding new entity part because the footer part hides it.
+in the table the actions section should contain a "modify" option which lets us modify the values
+also if every value matches with an already exsisting value give an error message/question if we still want to add it or not
