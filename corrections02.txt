@@ -1,0 +1,9 @@
+react page:
+- maybe add a tic-tac-toe game as well
+- back to main menu part ->dont like it, should be at it's usual place so it is realy fixed
+
+Gotta go through the html5 page again
+
+check the ajax page as well
+
+Create a github folder called react in which you put the contents of the src folders of the two applications in 1-1 folders
