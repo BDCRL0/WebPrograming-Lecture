@@ -70,12 +70,33 @@
       font-size: 18px;
       text-decoration: underline;
     }
+    nav a {
+      margin: 0 15px;
+      color: #ff9d00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    nav ul li a.active {
+            text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>React Single Page Application</h1>
   </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="table.html">Table</a>
+    <a href="html5.html">HTML5 Features</a>
+    <a href="chart.html">Charts</a>
+    <a href="ajax.html">AJAX</a>
+    <a href="oojs.html">OOJS</a>
+    <a href="react.html">React</a>
+  </nav>
   <nav>
     <ul>
       <li><a href="#" onclick="setPage('Calculator')">Calculator</a></li>
@@ -84,7 +105,7 @@
   </nav>
   <div id="root"></div>
   <div class="back-link">
-    <a href="index.html">← Back to Main Menu</a>
+    <a href="index.html">Back to Home Page</a>
   </div>
   <footer>
     <p>Created by: [Szabó Lilla] | Neptun Code: [BDCRL0]</p>
