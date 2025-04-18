@@ -51,5 +51,5 @@ See `/assets/` folder or the attached project report PDF.
 - Neptun Code: [BDCRL0]
 
 ## 🔗 Links
-- [Live Demo](------------------)
+- [Live Demo](http://webprog10.nhely.hu)
 - [GitHub Repo](https://github.com/BDCRL0/WebPrograming-Lecture)

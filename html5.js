@@ -1,10 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     loadFromLocalStorage();
-    //initGeolocation();
-    setupDragDrop();
-    drawCanvas();
     drawSVG();
-    setupWorker();
   });
   
   function saveToLocalStorage() {
@@ -53,30 +49,4 @@ document.addEventListener("DOMContentLoaded", function () {
       ctx.transform(1, 0.5, -0.5, 1, 30, 10);
       ctx.fillStyle = "blue";
       ctx.fillRect(0, 0, 250, 100);
-  
-  function setupWorker() {
-    const workerBtn = document.getElementById("workerBtn");
-    const output = document.getElementById("workerOutput");
-  
-    if (window.Worker) {
-      const worker = new Worker(URL.createObjectURL(new Blob([`
-        onmessage = function () {
-          let sum = 0;
-          for (let i = 0; i < 1e7; i++) sum += i;
-          postMessage(sum);
-        }
-      `], { type: 'application/javascript' })));
-  
-      workerBtn.addEventListener("click", () => {
-        output.textContent = "Calculating...";
-        worker.postMessage("go");
-      });
-  
-      worker.onmessage = function (e) {
-        output.textContent = `Sum result from worker: ${e.data}`;
-      };
-    } else {
-      output.textContent = "Web Workers are not supported in this browser.";
-    }
-  }
   

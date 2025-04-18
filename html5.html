@@ -3,8 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML5 Features</title>
+  <title>Web-programming-1 Lecture Homework</title>
   <script defer src="html5.js"></script>
+  <script>
+    function bigLoop(){
+      if (typeof(Worker) !== "undefined") {
+        var worker = new Worker('bigLoop.js');
+        worker.onmessage = function (event) {
+          alert("Completed " + event.data + "iterations" );
+        };
+      } else {
+        alert("Sorry, your browser does not support Web Workers..." );
+      }
+    }
+    function sayHello(){
+      alert("Hello...." );
+    }
+  </script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -76,11 +91,35 @@
       justify-content: center;
     }
     #div1, #div2 {float:left; width:300px; height:150px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 200px;
+      background-color: #fff;
+      color: #1a1a2e;
+      margin-bottom: 15px;
+    }
+    button {
+      margin: 5px 10px 5px 0;
+      padding: 10px 15px;
+      background-color: #ff9d00;
+      color: #1a1a2e;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #0f3460;
+      color: #ff9d00;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>HTML5 Features</h1>
+    <h1>Web-programming-1 Lecture Homework</h1>
+        <h2>Html5 Features</h2>
   </header>
   <nav>
     <ul>
@@ -157,8 +196,8 @@
     </svg>
 
     <h2>Web Worker Example</h2>
-    <button id="workerBtn">Start Heavy Calculation</button>
-    <p id="workerOutput"></p>
+    <input type="button" onclick="bigLoop();" value="Big Loop">
+   	<input type="button" onclick="sayHello();" value="Say Hello">
   </div>
   <footer>
     <p>Created by: Szabó Lilla | Neptun Code: BDCRL0</p>

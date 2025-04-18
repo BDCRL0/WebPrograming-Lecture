@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>React SPA</title>
+  <title>Web-programming-1 Lecture Homework</title>
   <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -26,10 +26,23 @@
       padding: 10px;
       text-align: center;
     }
+    nav a {
+      margin: 0 15px;
+      color: #ff9d00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a.active {
+      margin: 0 15px;
+      color: #ff9d00;
+      text-decoration: underline;
+      font-weight: bold;
+    }
     nav ul {
       list-style: none;
       padding: 0;
     }
+    
     nav ul li {
       display: inline;
       margin: 0 15px;
@@ -42,12 +55,16 @@
     nav ul li a.active {
       text-decoration: underline;
     }
+    nav a:hover {
+      text-decoration: underline;
+    }
     #root {
       padding: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 60vh;
+      flex-direction: column;
     }
     .counter {
       text-align: center;
@@ -70,23 +87,31 @@
       font-size: 18px;
       text-decoration: underline;
     }
-    nav a {
-      margin: 0 15px;
-      color: #ff9d00;
-      text-decoration: none;
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .cell {
+      width: 80px;
+      height: 80px;
+      background-color: #fff;
+      color: #1a1a2e;
+      font-size: 32px;
       font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    nav ul li a.active {
-            text-decoration: underline;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>React Single Page Application</h1>
+    <h1>Web-programming-1 Lecture Homework</h1>
+        <h2>React Single Page Application</h2>
   </header>
   <nav>
     <a href="index.html">Home</a>
@@ -95,12 +120,13 @@
     <a href="chart.html">Charts</a>
     <a href="ajax.html">AJAX</a>
     <a href="oojs.html">OOJS</a>
-    <a href="react.html">React</a>
+    <a href="react.html"class="active">React</a>
   </nav>
   <nav>
     <ul>
       <li><a href="#" onclick="setPage('Calculator')">Calculator</a></li>
       <li><a href="#" onclick="setPage('Counter')">Counter</a></li>
+      <li><a href="#" onclick="setPage('TicTacToe')">Tic Tac Toe</a></li>
     </ul>
   </nav>
   <div id="root"></div>
@@ -140,9 +166,56 @@
       );
     }
 
+    function TicTacToe() {
+      const [board, setBoard] = useState(Array(9).fill(null));
+      const [xIsNext, setXIsNext] = useState(true);
+      const winner = calculateWinner(board);
+
+      function handleClick(index) {
+        if (board[index] || winner) return;
+        const newBoard = board.slice();
+        newBoard[index] = xIsNext ? 'X' : 'O';
+        setBoard(newBoard);
+        setXIsNext(!xIsNext);
+      }
+
+      function resetGame() {
+        setBoard(Array(9).fill(null));
+        setXIsNext(true);
+      }
+
+      return (
+        <div style={{ textAlign: 'center' }}>
+          <h2>Tic Tac Toe</h2>
+          {winner ? <p>Winner: {winner}</p> : <p>Next Player: {xIsNext ? 'X' : 'O'}</p>}
+          <div className="board">
+            {board.map((cell, idx) => (
+              <div key={idx} className="cell" onClick={() => handleClick(idx)}>{cell}</div>
+            ))}
+          </div>
+          <button style={{ marginTop: '20px' }} onClick={resetGame}>Restart</button>
+        </div>
+      );
+    }
+
+    function calculateWinner(squares) {
+      const lines = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
+      ];
+      for (let [a, b, c] of lines) {
+        if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+          return squares[a];
+        }
+      }
+      return null;
+    }
+
     function App({ page }) {
       if (page === 'Calculator') return <Calculator />;
       if (page === 'Counter') return <Counter />;
+      if (page === 'TicTacToe') return <TicTacToe />;
       return <p style={{ textAlign: 'center' }}>Select a menu option.</p>;
     }
 
