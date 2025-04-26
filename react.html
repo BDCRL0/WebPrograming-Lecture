@@ -187,7 +187,17 @@
       return (
         <div style={{ textAlign: 'center' }}>
           <h2>Tic Tac Toe</h2>
-          {winner ? <p>Winner: {winner}</p> : <p>Next Player: {xIsNext ? 'X' : 'O'}</p>}
+          {winner ? (
+            <p>Winner: {winner}</p>
+          ) : board.every(cell => cell !== null) ? (
+            <p>It's a tie!</p>
+          ) : (
+            <p>Next Player: {xIsNext ? 'X' : 'O'}</p>
+          )}
+
+
+
+
           <div className="board">
             {board.map((cell, idx) => (
               <div key={idx} className="cell" onClick={() => handleClick(idx)}>{cell}</div>

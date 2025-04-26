@@ -121,10 +121,10 @@
             </tbody>
         </table>
         <h3>Add New Entry</h3>
-        <input type="text" id="name" placeholder="Name" required>
-        <input type="number" id="age" placeholder="Age" required>
-        <input type="text" id="city" placeholder="City" required>
-        <input type="text" id="country" placeholder="Country" required>
+        <input type="text" id="name" placeholder="Name" required minlength="2" maxlength="100">
+        <input type="number" id="age" placeholder="Age" required min="1" max="100">
+        <input type="text" id="city" placeholder="City" required minlength="2" maxlength="100">
+        <input type="text" id="country" placeholder="Country" required minlength="2" maxlength="100">
         <button onclick="addRow()">Add</button>
     </div>
     <footer>

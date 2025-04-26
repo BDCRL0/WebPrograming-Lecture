@@ -19,7 +19,7 @@ The site consists of the following pages:
 - `/chart.html` – Table-driven line chart with Chart.js
 - `/ajax.html` – Live API CRUD operations
 - `/oojs.html` – Object-Oriented JS: Add/remove animated color boxes
-- `/react.html` – React SPA: Calculator + Counter
+- `/react.html` – React SPA: Calculator + Counter + Tic Tac Toe
 
 ## 🚀 Features
 - Clean and responsive layout
