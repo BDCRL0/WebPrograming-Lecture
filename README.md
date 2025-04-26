@@ -40,7 +40,7 @@ The site consists of the following pages:
 See `/assets/` folder or the attached project report PDF.
 
 ## 📁 Project Report
-[WebProgram_Lecture_Project_Report.pdf](./WebProgram_Lecture_Project_Report.pdf)
+[Web Programming I Lecture Report-Github.pdf](./Web Programming I Lecture Report-Github.pdf)
 
 ## 🧪 Tested With
 - Desktop browsers (Chrome, Firefox)
